@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'; 
 import { Header } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import Workouts from './Workouts';
 
-const Workout = () => {
+class Workout extends Component {
     debugger
-    const workouts = this.props.workouts;
-    return (
+    render () {
+        const workouts = this.props.workouts;
+        debugger
+        return (
         <div>
             <Header as='h3' block>
                 HIIT WORKOUTS:
             </Header>
         </div>
-    )
+        )
+    }
 }
 
 function mapStateToProps(state) {
@@ -21,7 +24,7 @@ function mapStateToProps(state) {
             workouts: state.workoutsReducer
         }
     } else {
-        workouts: [{title: '', duration: '', interval: '', rest: '', sets: ''}]
+       return { workouts: [{title: '', duration: '', interval: '', rest: '', sets: ''}] }
     }
 }
 

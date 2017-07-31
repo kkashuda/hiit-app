@@ -4,6 +4,7 @@ import Workout from './Workout';
 class Workouts extends Component {
     constructor(props) {
         super(props)
+        debugger
 
     }
 
