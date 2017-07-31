@@ -1,5 +1,4 @@
 class WorkoutsController < ApiController
-  before_action :set_workout, only: [:show, :update, :destroy]
 
   # GET /workouts
   def index
@@ -39,10 +38,6 @@ class WorkoutsController < ApiController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_workout
-      @workout = Workout.find(params[:id])
-    end
 
     # Only allow a trusted parameter "white list" through.
     def workout_params
