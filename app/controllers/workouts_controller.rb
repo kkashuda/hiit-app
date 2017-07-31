@@ -1,9 +1,9 @@
+require 'pry'
 class WorkoutsController < ApiController
 
   # GET /workouts
   def index
     @workouts = Workout.all
-
     render json: @workouts
   end
 
@@ -15,7 +15,7 @@ class WorkoutsController < ApiController
   # POST /workouts
   def create
     @workout = Workout.new(workout_params)
-
+    binding.pry
     if @workout.save
       render json: @workout, status: :created, location: @workout
     else
