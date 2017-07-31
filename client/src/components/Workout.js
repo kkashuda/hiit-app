@@ -4,10 +4,8 @@ import { connect } from 'react-redux';
 import Workouts from './Workouts';
 
 class Workout extends Component {
-    debugger
     render () {
         const workouts = this.props.workouts;
-        debugger
         return (
         <div>
             <Header as='h3' block>
