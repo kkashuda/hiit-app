@@ -9,9 +9,16 @@ class Workouts extends Component {
     }
 
     render() {
-        debugger
         return (
             <div>
+                {this.props.workouts.map((workout, index) => 
+                    <div key={workout.id}>
+                        <p> {workout.title} </p>
+                        <p> {workout.interval} </p>
+                        <p> {workout.duration} </p>
+                        <p> {workout.sets} </p>
+                    </div>
+                 )}
             </div>
         )
     }

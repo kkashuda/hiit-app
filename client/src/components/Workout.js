@@ -11,6 +11,7 @@ class Workout extends Component {
             <Header as='h3' block>
                 HIIT WORKOUTS:
             </Header>
+            {this.props.workouts && <Workouts workouts={workouts}/>}
         </div>
         )
     }
