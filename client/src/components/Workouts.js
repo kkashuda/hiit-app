@@ -9,6 +9,7 @@ class Workouts extends Component {
     }
 
     render() {
+        debugger
         return (
             <div>
             </div>
