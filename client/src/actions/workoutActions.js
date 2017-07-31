@@ -1,4 +1,4 @@
-import WorkoutApi from '../workoutApi'; 
+import WorkoutApi from '../components/WorkoutApi'; 
 
 
 function getWorkoutSuccess(workouts) {

@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux'
 import reducers from './reducers/reducer'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
-import { getWorkouts } from './actions/workoutActions';
+import { getWorkout } from './actions/workoutActions';
 
 
 const store = createStore(
