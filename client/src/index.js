@@ -17,6 +17,8 @@ const store = createStore(
     applyMiddleware(thunk)  
 )
 
+store.dispatch(getWorkout());
+
 ReactDOM.render(
     <Provider store={store}>
         <App />
