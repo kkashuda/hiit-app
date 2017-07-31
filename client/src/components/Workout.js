@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { Header } from 'semantic-ui-react'
+import { Header, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import Workouts from './Workouts';
 
@@ -8,9 +8,10 @@ class Workout extends Component {
         const workouts = this.props.workouts;
         return (
         <div>
-            <Header as='h3' block>
-                HIIT WORKOUTS:
-            </Header>
+            <Label size='big' color='pink'>
+                HIIT Workouts
+            </Label>
+            <p></p>
             {this.props.workouts && <Workouts workouts={workouts}/>}
         </div>
         )
