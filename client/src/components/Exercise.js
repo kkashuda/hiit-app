@@ -1,13 +1,16 @@
 import React, { Component } from 'react'; 
 import { Header, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import Exercises from './Exercises';
+import Workouts from './Workouts';
 
 class Exercise extends Component {
+
     render () {
+        debugger
+        const exercises = this.props.exercises;
         return (
             <div>
-                {this.props.exercises && <Exercises exercises={exercises}/>}
+                {this.props.exercises && <Workouts exercises={exercises}/>}
             </div>
         )
     }

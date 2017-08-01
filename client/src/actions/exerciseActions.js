@@ -6,8 +6,10 @@ function getExerciseSuccess(exercises) {
 
 const getExercise = () => {
     return function(dispatch) {
-        return ExerciseApi.getExercises().then(exercises => {
+        return ExerciseApi.getExercises()
+        .then(exercises => {
             dispatch(getExerciseSuccess(exercises))
+            return exercises
         })
     }
 }

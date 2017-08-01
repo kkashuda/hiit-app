@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Workout from './Workout';
 import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
+import Exercise from './Exercise'
 
 class Workouts extends Component {
     constructor(props) {
