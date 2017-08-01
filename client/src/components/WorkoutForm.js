@@ -28,6 +28,36 @@ class WorkoutForm extends Component {
         .then(window.location.reload())
     }
 
+    handleTitleChange(event) {
+        this.setState({
+            title: event.target.value
+        })
+    }
+
+    handleDurationChange(event) {
+        this.setState({
+            duration: event.target.value
+        })
+    }
+
+    handleSetsChange(event) {
+        this.setState({
+            sets: event.target.value
+        })
+    }
+
+    handleCooldownChange(event) {
+      this.setState({
+            cooldown: event.target.value
+        })
+    }
+
+    handleRestChange(event) {
+        this.setState({
+            rest: event.target.value
+        })
+    }
+
     render() {
         return (
             <div>
@@ -36,10 +66,31 @@ class WorkoutForm extends Component {
                        placeholder="title"
                        onChange={event => this.handleTitleChange(event)}
                        value={this.props.title}
-
+                 />
+                  <input type="text" 
+                       placeholder="duration"
+                       onChange={event => this.handleDurationChange(event)}
+                       value={this.props.duration}
+                 />
+                  <input type="text" 
+                       placeholder="sets"
+                       onChange={event => this.handleSetsChange(event)}
+                       value={this.props.sets}
+                 />
+                  <input type="text" 
+                       placeholder="rest"
+                       onChange={event => this.handleRestChange(event)}
+                       value={this.props.rest}
+                 />
+                  <input type="text" 
+                       placeholder="cooldown"
+                       onChange={event => this.handleCooldownChange(event)}
+                       value={this.props.cooldown}
                  />
                 </form>
             </div>
         )
     }
 }
+
+export default WorkoutForm; 

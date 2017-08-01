@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Homepage from './Homepage'
 import Workout from './Workout'
+import WorkoutForm from './WorkoutForm'
 
 const Navbar = () => {
 return (
@@ -21,10 +22,12 @@ return (
             <Menu>
                 <Menu.Item as={Link} to='/'> Home </Menu.Item>
                 <Menu.Item as={Link} to='/workouts'> Workouts </Menu.Item>
+                <Menu.Item as={Link} to='/workout-form'> Add Workout </Menu.Item>
             </Menu>
             
             <Route exact path="/" component={Homepage}/>
             <Route exact path="/workouts" component={Workout}/>
+            <Route exact path="/workout-form" component={WorkoutForm}/>
         </div>
     </ Router >
 )}
