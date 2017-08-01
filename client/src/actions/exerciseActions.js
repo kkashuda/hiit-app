@@ -14,6 +14,7 @@ const getExercise = () => {
     }
 }
 
+
 export {
     getExerciseSuccess, 
     getExercise

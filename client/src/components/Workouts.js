@@ -9,6 +9,7 @@ class Workouts extends Component {
     }
 
     render() {
+        debugger 
         return (
             <div>
                 {this.props.workouts.map((workout, index) => 
@@ -18,7 +19,7 @@ class Workouts extends Component {
                         <p> Total duration: {workout.duration} minutes </p>
                         <p></p>
                         <p> Do each workout for {workout.interval} seconds</p>
-                        <p> After each exercise rest for {workout.cooldown} seconds</p>
+                        <p> After each workout rest for {workout.interval} seconds</p>
 
                         <p> Complete the circuit {workout.sets} x </p>
                         <p> After each set rest for {workout.rest} minute(s) </p>
@@ -36,6 +37,8 @@ class Workouts extends Component {
                     </div>
                   
                  )}
+
+    
             </div>
         )
     }

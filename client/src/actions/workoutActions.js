@@ -6,7 +6,7 @@ function getWorkoutSuccess(workouts) {
 }
 
 function createWorkoutSuccess(workout) {
-    return {type: 'CREATE_WORKOUT_SUCCESS', workout}
+    return {type: 'CREATE_WORKOUT_SUCCESS'}
 }
 
 const getWorkout = () => {
@@ -28,5 +28,7 @@ const createWorkout = (workout) => {
 
 export {
     getWorkoutSuccess, 
-    getWorkout
+    getWorkout,
+    createWorkout,
+    createWorkoutSuccess
 }

@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import App from '../App'
-import Exercise from './Exercise'
+import Workout from './Workout'
+
 
 class WorkoutForm extends Component {
     constructor(props) {
         super(props);
-        
+   
         this.state = {
-            workouts: [],
+                workouts: [] 
         }
 
         this.createWorkout = this.createWorkout.bind(this);
     }
 
     createWorkout(workout) {
+        debugger
         return fetch('/workouts', {
             method: 'POST', 
             headers: {
@@ -25,7 +27,7 @@ class WorkoutForm extends Component {
          .then(workout => this.setState({
              workouts: this.state.workouts.concat(workout)
          }))
-        .then(window.location.reload())
+         .then(window.location.reload())
     }
 
     handleTitleChange(event) {
@@ -58,10 +60,24 @@ class WorkoutForm extends Component {
         })
     }
 
+    handleIntervalChange(event) {
+        this.setState({
+            interval: event.target.value
+        }) 
+    }
+
+    handleSubmit(event) {
+        this.createWorkout(this.state)
+        this.refs.workoutForm.reset()
+        event.preventDefault()
+
+
+    }
+
     render() {
         return (
             <div>
-                <form ref="create-workout" className="workout-form" onSubmit = {(event) => this.handleSubmit(event)}>
+                <form ref="workoutForm" className="workout-form" onSubmit = {(event) => this.handleSubmit(event)}>
                 <input type="text" 
                        placeholder="title"
                        onChange={event => this.handleTitleChange(event)}
@@ -87,6 +103,16 @@ class WorkoutForm extends Component {
                        onChange={event => this.handleCooldownChange(event)}
                        value={this.props.cooldown}
                  />
+
+                <input type="text" 
+                       placeholder="interval"
+                       onChange={event => this.handleIntervalChange(event)}
+                       value={this.props.cooldown}
+                 />
+
+                 <input type="submit"
+                        value="create workout"
+                />
                 </form>
             </div>
         )

@@ -15,7 +15,6 @@ class WorkoutsController < ApiController
   # POST /workouts
   def create
     @workout = Workout.new(workout_params)
-    binding.pry
     if @workout.save
       render json: @workout, status: :created, location: @workout
     else
@@ -41,6 +40,6 @@ class WorkoutsController < ApiController
 
     # Only allow a trusted parameter "white list" through.
     def workout_params
-      params.require(:workout).permit(:title, :duration, :rest, :interval, :sets)
+      params.require(:workout).permit(:title, :duration, :rest, :interval, :sets, :cooldown)
     end
 end

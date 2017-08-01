@@ -17,9 +17,9 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunk)  
 )
-store.dispatch(getExercise());
-store.dispatch(getWorkout());
 
+store.dispatch(getWorkout());
+store.dispatch(getExercise());
 
 ReactDOM.render(
     <Provider store={store}>

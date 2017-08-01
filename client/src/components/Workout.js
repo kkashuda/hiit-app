@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 class Workout extends Component {
     
     render () {
+
         return (
         <div>
             <Label size='big' color='pink'> 
@@ -32,7 +33,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-    debugger
     if (state.workoutsReducer.length > 0 && state.exercisesReducer.length > 0) {
         return {
             workouts: state.workoutsReducer,

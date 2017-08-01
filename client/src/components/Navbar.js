@@ -28,6 +28,7 @@ return (
             <Route exact path="/" component={Homepage}/>
             <Route exact path="/workouts" component={Workout}/>
             <Route exact path="/workout-form" component={WorkoutForm}/>
+
         </div>
     </ Router >
 )}
