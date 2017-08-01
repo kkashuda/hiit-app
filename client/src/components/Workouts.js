@@ -8,10 +8,12 @@ class Workouts extends Component {
         super(props)
     }
 
-    render() { 
+    render() {
+        debugger 
         return (
             <div>
                 {this.props.workouts.map((workout, index) => 
+                <div>
                     <div key={workout.id}>
                         <Header as='h2'> {workout.title} </Header>
                         <p> Total duration: {workout.duration} minutes </p>
@@ -19,8 +21,19 @@ class Workouts extends Component {
                         <p> Do each workout for {workout.interval} seconds</p>
                         <p> Complete the circuit {workout.sets} x </p>
                         <p> After each set rest for {workout.rest} minute(s) </p>
+                       
+                    </div>
+                    <div>
+                        { this.props.exercises.map((exercise, index) => 
+                        <div key={exercise.id}>
+                            {exercise.workout_id === workout.id ? <p> {exercise.description} </p> : null} 
+                        </div>
+                    )}
+                    </div>
                     </div>
                  )}
+
+    
             </div>
         )
     }

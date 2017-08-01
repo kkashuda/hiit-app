@@ -17,7 +17,7 @@ class Workout extends Component {
                 HIIT Workouts
             </Label>
             <p></p>
-            {this.props.workouts && <Workouts workouts={this.props.workouts}/>}
+            {this.props.workouts && this.props.exercises && <Workouts workouts={this.props.workouts} exercises={this.props.exercises}/>}
         </div>
         )
     }
