@@ -41,7 +41,7 @@ function mapStateToProps(state) {
 
         }
     } else {
-       return { workouts: [{title: '', duration: '', interval: '', rest: '', sets: ''}],
+       return { workouts: [{title: '', duration: '', interval: '', rest: '', sets: '', cooldown: ''}],
                 exercises: [{description: ''}]
     }
     }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731175156) do
+ActiveRecord::Schema.define(version: 20170801045239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20170731175156) do
     t.integer "sets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cooldown"
   end
 
   add_foreign_key "exercises", "workouts"

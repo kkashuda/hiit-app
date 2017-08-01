@@ -19,10 +19,13 @@ class Workouts extends Component {
                         <p> Total duration: {workout.duration} minutes </p>
                         <p></p>
                         <p> Do each workout for {workout.interval} seconds</p>
+                        <p> After each exercise rest for {workout.cooldown} seconds</p>
+
                         <p> Complete the circuit {workout.sets} x </p>
                         <p> After each set rest for {workout.rest} minute(s) </p>
                        
                     </div>
+                    <br></br> <Header as='h3'> Exercises:</Header>
                     <div>
                         { this.props.exercises.map((exercise, index) => 
                         <div key={exercise.id}>
@@ -30,7 +33,9 @@ class Workouts extends Component {
                         </div>
                     )}
                     </div>
+                      <br></br>
                     </div>
+                  
                  )}
 
     
