@@ -10,7 +10,6 @@ import { bindActionCreators } from 'redux';
 class Workout extends Component {
     
     render () {
-        debugger
         return (
         <div>
             <Label size='big' color='pink'> 

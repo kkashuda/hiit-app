@@ -6,7 +6,6 @@ import Workouts from './Workouts';
 class Exercise extends Component {
 
     render () {
-        debugger
         const exercises = this.props.exercises;
         return (
             <div>

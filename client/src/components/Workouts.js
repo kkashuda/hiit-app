@@ -9,7 +9,6 @@ class Workouts extends Component {
     }
 
     render() {
-        debugger 
         return (
             <div>
                 {this.props.workouts.map((workout, index) => 
@@ -37,8 +36,6 @@ class Workouts extends Component {
                     </div>
                   
                  )}
-
-    
             </div>
         )
     }
