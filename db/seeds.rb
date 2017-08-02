@@ -12,16 +12,9 @@ workout1 = Workout.create(
   rest: 1, 
   interval: 30, 
   sets: 4, 
-  cooldown: 20 
+  cooldown: 20, 
+  exercises: ["Jumping jacks", "High knees", "Jog in place", "Burpees", "Squat jumps", "Walk in place"]
 )
-
-workout1.exercises.create(description: "Jumping jacks")
-workout1.exercises.create(description: "High knees")
-workout1.exercises.create(description: "Jog in place")
-workout1.exercises.create(description: "Burpees")
-workout1.exercises.create(description: "Squat jumps")
-workout1.exercises.create(description: "Walk in place")
-
 
 workout2 = Workout.create(
   title: "HIIT Fat Shredder Workout",
@@ -29,12 +22,6 @@ workout2 = Workout.create(
   rest: 1, 
   interval: 45, 
   sets: 4,
-  cooldown: 10
+  cooldown: 10,
+  exercises:  [ "Fast squats", "Jumping jacks", "Skipping rope", "Butt kicks", "Mountain climbers", "Squat jumps"]
 )
-
-workout2.exercises.create(description: "Fast squats")
-workout2.exercises.create(description: "Jumping jacks")
-workout2.exercises.create(description: "Skipping rope")
-workout2.exercises.create(description: "Butt kicks")
-workout2.exercises.create(description: "Squat jumps")
-workout2.exercises.create(description: "Mountain climbers")

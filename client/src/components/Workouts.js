@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Workout from './Workout';
 import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
-import Exercise from './Exercise'
 
 class Workouts extends Component {
     constructor(props) {
@@ -27,9 +26,9 @@ class Workouts extends Component {
                     </div>
                     <br></br> <Header as='h3'> Exercises:</Header>
                     <div>
-                        { this.props.exercises.map((exercise, index) => 
+                        { workout.exercises.map((exercise, index) => 
                         <div key={exercise.id}>
-                            {exercise.workout_id === workout.id ? <p> {exercise.description} </p> : null} 
+                             <p> {exercise} </p>
                         </div>
                     )}
                     </div>

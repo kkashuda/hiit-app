@@ -8,7 +8,8 @@ class WorkoutForm extends Component {
         super(props);
    
         this.state = {
-                workouts: [] 
+                workouts: [],
+                exercises: [] 
         }
 
         this.createWorkout = this.createWorkout.bind(this);
@@ -22,10 +23,17 @@ class WorkoutForm extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(workout)
+    
         })
          .then(response => response.json())
+         .then(json => console.log(json))
          .then(workout => this.setState({
-             workouts: this.state.workouts.concat(workout)
+             workouts:[...this.state.workouts, workout.title],
+             workouts:[...this.state.workouts, workout.interval],
+             workouts:[...this.state.workouts, workout.sets],
+             workouts:[...this.state.workouts, workout.duration],
+             workouts:[...this.state.workouts, workout.rest],
+             workouts:[...this.state.workouts, workout.cooldown],
          }))
          .then(window.location.reload())
     }
@@ -66,18 +74,37 @@ class WorkoutForm extends Component {
         }) 
     }
 
-    handleSubmit(event) {
-        this.createWorkout(this.state)
+    handleExerciseChange(event) {
+        this.setState({
+            description: event.target.value
+        })
+    }
+
+    splitExercises(exercises) {
+    window.fetch('/workouts')
+      .then(response => response.json())
+      .then(json => console.log(json))
+      .catch(error => console.log(error))
+
+    }
+
+    handleWorkoutSubmit(event) {
+        var workout = this.createWorkout(this.state)
+        this.handleExerciseSubmit(this.state.description)
         this.refs.workoutForm.reset()
         event.preventDefault()
 
 
     }
 
+    handleExerciseSubmit(event) {
+        this.splitExercises(this.state.description)
+    }
+
     render() {
         return (
             <div>
-                <form ref="workoutForm" className="workout-form" onSubmit = {(event) => this.handleSubmit(event)}>
+                <form ref="workoutForm" className="workout-form" onSubmit = {(event) => this.handleWorkoutSubmit(event)}>
                 <input type="text" 
                        placeholder="title"
                        onChange={event => this.handleTitleChange(event)}
@@ -110,10 +137,18 @@ class WorkoutForm extends Component {
                        value={this.props.cooldown}
                  />
 
+                <input type="text" 
+                        placeholder="exercises"
+                        onChange={event => this.handleExerciseChange(event)}
+                        value={this.props.description}
+                 />
+
+
                  <input type="submit"
                         value="create workout"
                 />
                 </form>
+
             </div>
         )
     }
