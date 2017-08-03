@@ -68,8 +68,8 @@ class WorkoutForm extends Component {
     render() {
         return (
             <Container>
-                   <Segment color='pink'>
-
+                <Segment color='pink'>
+                <Header as="h3">ADD A WORKOUT:</Header>
                 <Form ref="workoutForm" className="workout-form" onSubmit = {(event) => this.handleWorkoutSubmit(event)}>
                 <Header as='h4' color='black' textAlign='left'>Title</Header>
                 <Form.Field control={Input} type="text" width={2}
@@ -126,8 +126,6 @@ class WorkoutForm extends Component {
                 />
                 </ Form>
                 </Segment>
-     
-
             </Container>
         )
     }

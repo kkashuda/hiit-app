@@ -13,8 +13,6 @@ const Homepage = () => {
                 <Segment> <Header as='h3'> 2. Efficient and Convenient </Header> </Segment>
                 <Segment> <Header as='h3'> 3. No Equipment Necessary </Header> </Segment>
             </ Segment.Group>
-
-
         </Container>
     )
 }
