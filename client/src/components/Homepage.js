@@ -3,10 +3,19 @@ import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } fro
 
 const Homepage = () => {
     return (
-        <div>
-            <Header as='h2'>Welcome!</Header>
-             <Header as='h3'>Pick a workout from the list or add your own</Header>
-        </div>
+        <Container>
+             <br></br>
+             <Header as='h2' color="pink">Why HIIT?</Header>
+             <p><i> HIIT, or high-intensity interval training, is a training technique in which you give all-out, <br></br>one hundred percent effort through quick, intense bursts of exercise, followed by short, sometimes active, recovery periods. </i></p>
+            <br></br>
+             <Segment.Group>
+                <Segment> <Header as='h3'> 1. Increase your Metabolism </Header> </Segment>
+                <Segment> <Header as='h3'> 2. Efficient and Convenient </Header> </Segment>
+                <Segment> <Header as='h3'> 3. No Equipment Necessary </Header> </Segment>
+            </ Segment.Group>
+
+
+        </Container>
     )
 }
 
