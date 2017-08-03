@@ -40,6 +40,6 @@ class WorkoutsController < ApiController
 
     # Only allow a trusted parameter "white list" through.
     def workout_params
-      params.require(:workout).permit(:title, :duration, :rest, :interval, :sets, :cooldown, exercises: [])
+      params.require(:workout).permit(:title, :duration, :rest, :interval, :sets, :cooldown, :exercises)
     end
 end

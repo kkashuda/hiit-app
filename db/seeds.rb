@@ -13,7 +13,7 @@ workout1 = Workout.create(
   interval: 30, 
   sets: 4, 
   cooldown: 20, 
-  exercises: ["Jumping jacks", "High knees", "Jog in place", "Burpees", "Squat jumps", "Walk in place"]
+  exercises: "Jumping jacks, High knees, Jog in place, Burpees, Squat jumps, Walk in place"
 )
 
 workout2 = Workout.create(
@@ -23,5 +23,5 @@ workout2 = Workout.create(
   interval: 45, 
   sets: 4,
   cooldown: 10,
-  exercises:  [ "Fast squats", "Jumping jacks", "Skipping rope", "Butt kicks", "Mountain climbers", "Squat jumps"]
+  exercises:  "Fast squats, Jumping jacks, Skipping rope, Butt kicks, Mountain climbers, Squat jumps"
 )

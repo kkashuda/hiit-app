@@ -6,17 +6,15 @@ import Workout from './Workout'
 class WorkoutForm extends Component {
     constructor(props) {
         super(props);
-   
+
         this.state = {
-                workouts: [],
-                exercises: [] 
+            workouts: []
         }
 
         this.createWorkout = this.createWorkout.bind(this);
     }
 
     createWorkout(workout) {
-        debugger
         return fetch('/workouts', {
             method: 'POST', 
             headers: {
@@ -33,7 +31,8 @@ class WorkoutForm extends Component {
              workouts:[...this.state.workouts, workout.sets],
              workouts:[...this.state.workouts, workout.duration],
              workouts:[...this.state.workouts, workout.rest],
-             workouts:[...this.state.workouts, workout.cooldown],
+             workouts:[...this.state.workouts, workout.exercises],
+             
          }))
          .then(window.location.reload())
     }
@@ -76,30 +75,19 @@ class WorkoutForm extends Component {
 
     handleExerciseChange(event) {
         this.setState({
-            description: event.target.value
+            exercises: event.target.value
         })
     }
 
-    splitExercises(exercises) {
-    window.fetch('/workouts')
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(error => console.log(error))
-
-    }
 
     handleWorkoutSubmit(event) {
         var workout = this.createWorkout(this.state)
-        this.handleExerciseSubmit(this.state.description)
         this.refs.workoutForm.reset()
         event.preventDefault()
 
-
     }
 
-    handleExerciseSubmit(event) {
-        this.splitExercises(this.state.description)
-    }
+
 
     render() {
         return (
@@ -134,13 +122,13 @@ class WorkoutForm extends Component {
                 <input type="text" 
                        placeholder="interval"
                        onChange={event => this.handleIntervalChange(event)}
-                       value={this.props.cooldown}
+                       value={this.props.interval}
                  />
 
                 <input type="text" 
                         placeholder="exercises"
                         onChange={event => this.handleExerciseChange(event)}
-                        value={this.props.description}
+                        value={this.props.exercises}
                  />
 
 

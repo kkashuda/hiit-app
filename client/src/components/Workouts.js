@@ -26,7 +26,7 @@ class Workouts extends Component {
                     </div>
                     <br></br> <Header as='h3'> Exercises:</Header>
                     <div>
-                        { workout.exercises.map((exercise, index) => 
+                        { workout.exercises.split(",").map((exercise, index) => 
                         <div key={exercise.id}>
                              <p> {exercise} </p>
                         </div>
