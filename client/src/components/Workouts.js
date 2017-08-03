@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import Workout from './Workout';
-import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
+import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider} from 'semantic-ui-react'
 
 class Workouts extends Component {
     constructor(props) {
         super(props)
     }
 
-    render() {
-        debugger 
+    render() { 
         return (
             <div>
                 {this.props.workouts.map((workout, index) => 
-                <div>
+                <Container>
+            <Segment color="pink">
                     <div key={workout.id}>
                         <Header as='h2'> {workout.title} </Header>
                         <p> Total duration: {workout.duration} minutes </p>
@@ -24,8 +24,10 @@ class Workouts extends Component {
                         <p> After each set rest for {workout.rest} minute(s) </p>
                        
                     </div>
+                    
                     <br></br> <Header as='h3'> Exercises:</Header>
                     <div>
+                    
                         { workout.exercises.split(",").map((exercise, index) => 
                         <div key={exercise.id}>
                              <p> {exercise} </p>
@@ -33,7 +35,9 @@ class Workouts extends Component {
                     )}
                     </div>
                       <br></br>
-                    </div>
+                             </Segment>
+                    </Container>
+             
                   
                  )}
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import App from '../App'
 import Workout from './Workout'
+import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider, Form, Input, TextArea} from 'semantic-ui-react'
 
 
 class WorkoutForm extends Component {
@@ -91,53 +92,68 @@ class WorkoutForm extends Component {
 
     render() {
         return (
-            <div>
-                <form ref="workoutForm" className="workout-form" onSubmit = {(event) => this.handleWorkoutSubmit(event)}>
-                <input type="text" 
+            <Container>
+                   <Segment color='pink'>
+
+                <Form ref="workoutForm" className="workout-form" onSubmit = {(event) => this.handleWorkoutSubmit(event)}>
+                <Header as='h4' color='black' textAlign='left'>Title</Header>
+                <Form.Field control={Input} type="text" width={2}
                        placeholder="title"
                        onChange={event => this.handleTitleChange(event)}
                        value={this.props.title}
                  />
-                  <input type="text" 
+                   <Header as='h4' color='black' textAlign='left'>Total duration</Header>
+                  <Form.Field control={Input} type="text" width={2}
                        placeholder="duration"
                        onChange={event => this.handleDurationChange(event)}
                        value={this.props.duration}
                  />
-                  <input type="text" 
+                
+                <Header as='h4' color='black' textAlign='left'>Number of sets</Header>
+                  <Form.Field control={Input} type="text" width={2}
                        placeholder="sets"
                        onChange={event => this.handleSetsChange(event)}
                        value={this.props.sets}
                  />
-                  <input type="text" 
+
+                <Header as='h4' color='black' textAlign='left'>How many seconds of rest between each exercise?</Header>
+                  <Form.Field control={Input} type="text" width={2}
                        placeholder="rest"
                        onChange={event => this.handleRestChange(event)}
                        value={this.props.rest}
                  />
-                  <input type="text" 
+
+                <Header as='h4' color='black' textAlign='left'>How many minutes of rest after completing each set?</Header>
+
+                  <Form.Field control={Input} type="text" width={2}
                        placeholder="cooldown"
                        onChange={event => this.handleCooldownChange(event)}
                        value={this.props.cooldown}
                  />
 
-                <input type="text" 
+                <Header as='h4' color='black' textAlign='left'>The duration (in seconds) of each exercise</Header>
+                <Form.Field control={Input} type="text" width={2}
                        placeholder="interval"
                        onChange={event => this.handleIntervalChange(event)}
                        value={this.props.interval}
                  />
 
-                <input type="text" 
+                <Header as='h4' color='black' textAlign='left'>List the exercises, seperating each exercise by a comma</Header>
+                <Form.Field control={TextArea} type="text" width={4}
                         placeholder="exercises"
                         onChange={event => this.handleExerciseChange(event)}
                         value={this.props.exercises}
                  />
 
 
-                 <input type="submit"
-                        value="create workout"
+                 <Form.Field control={Button} type="submit"
+                        content='Submit'
                 />
-                </form>
+                </ Form>
+                </Segment>
+     
 
-            </div>
+            </Container>
         )
     }
 }
