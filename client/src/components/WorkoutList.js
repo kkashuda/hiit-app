@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Workout from './Workout';
 import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider} from 'semantic-ui-react'
 
-const Workouts = props => (
+const WorkoutList = props => (
     <div>
         {props.workouts.map((workout, index) => 
         <Container>
@@ -35,9 +35,9 @@ const Workouts = props => (
     )
 
 
-    Workouts.defaultProps = {
+    WorkoutList.defaultProps = {
         workouts: []
     }
     
 
-export default Workouts;
+export default WorkoutList;

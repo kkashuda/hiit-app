@@ -1,22 +1,20 @@
 import React, { Component } from 'react'; 
 import { Header, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import Workouts from './Workouts';
+import WorkoutList from './WorkoutList';
 import * as workoutActions from '../actions/workoutActions';
 import { bindActionCreators } from 'redux';
 
 
-class Workout extends Component {
-    
+class Workout extends Component {  
     render () {
-
         return (
         <div>
             <Label size='big' color='pink'> 
                 HIIT Workouts
             </Label>
             <p></p>
-            {this.props.workouts && <Workouts workouts={this.props.workouts}/>}
+            {this.props.workouts && <WorkoutList workouts={this.props.workouts}/>}
         </div>
         )
     }
