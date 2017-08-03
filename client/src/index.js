@@ -9,7 +9,6 @@ import reducers from './reducers/reducer'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
 import { getWorkout } from './actions/workoutActions';
-import { getExercise } from './actions/exerciseActions';
 
 
 const store = createStore(
@@ -19,7 +18,6 @@ const store = createStore(
 )
 
 store.dispatch(getWorkout());
-store.dispatch(getExercise());
 
 ReactDOM.render(
     <Provider store={store}>
