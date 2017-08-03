@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import App from '../App'
 import Workout from './Workout'
 import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider, Form, Input, TextArea} from 'semantic-ui-react'
-
+import WorkoutApi from './WorkoutApi'
 
 class WorkoutForm extends Component {
     constructor(props) {
@@ -11,31 +11,6 @@ class WorkoutForm extends Component {
         this.state = {
             workouts: []
         }
-
-        this.createWorkout = this.createWorkout.bind(this);
-    }
-
-    createWorkout(workout) {
-        return fetch('/workouts', {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(workout)
-    
-        })
-         .then(response => response.json())
-         .then(json => console.log(json))
-         .then(workout => this.setState({
-             workouts:[...this.state.workouts, workout.title],
-             workouts:[...this.state.workouts, workout.interval],
-             workouts:[...this.state.workouts, workout.sets],
-             workouts:[...this.state.workouts, workout.duration],
-             workouts:[...this.state.workouts, workout.rest],
-             workouts:[...this.state.workouts, workout.exercises],
-             
-         }))
-         .then(window.location.reload())
     }
 
     handleTitleChange(event) {
@@ -82,7 +57,7 @@ class WorkoutForm extends Component {
 
 
     handleWorkoutSubmit(event) {
-        var workout = this.createWorkout(this.state)
+        var workout = WorkoutApi.createWorkout(this.state)
         this.refs.workoutForm.reset()
         event.preventDefault()
 

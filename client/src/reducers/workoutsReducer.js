@@ -1,6 +1,5 @@
 
 export default function workoutsReducer(state = [], action) {
-    debugger
     switch(action.type) {
         case 'GET_WORKOUTS_SUCCESS': 
             return action.workouts;
