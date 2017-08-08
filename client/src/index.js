@@ -19,6 +19,7 @@ const store = createStore(
 
 store.dispatch(getWorkout());
 
+
 ReactDOM.render(
     <Provider store={store}>
         <App />

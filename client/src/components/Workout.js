@@ -1,34 +1,20 @@
 import React, { Component } from 'react'; 
-import { Header, Label } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import WorkoutList from './WorkoutList';
-import * as workoutActions from '../actions/workoutActions';
-import { bindActionCreators } from 'redux';
-
+import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider, Label} from 'semantic-ui-react'
 
 class Workout extends Component {  
-    render () {
+    render() {
         return (
-        <div>
-            <Label size='big' color='pink'> 
-                HIIT Workouts
-            </Label>
-            <p></p>
-            {this.props.workouts && <WorkoutList workouts={this.props.workouts}/>}
-        </div>
+            <Container>
+                {this.props.workouts && <WorkoutList workouts={this.props.workouts}/>}
+            </Container>
         )
     }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: {
-      workoutActions: bindActionCreators(workoutActions, dispatch)
-    }
-  };
-}
-
 function mapStateToProps(state) {
+    debugger
     if (state.workoutsReducer.length > 0) {
         return {
             workouts: state.workoutsReducer,
@@ -39,4 +25,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Workout);
+export default connect(mapStateToProps)(Workout);

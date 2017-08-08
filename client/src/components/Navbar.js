@@ -10,28 +10,30 @@ import Workout from './Workout'
 import WorkoutForm from './WorkoutForm'
 
 const Navbar = () => {
-return (
-    <Router>
-        <div>
-            <Header icon textAlign='center'>
-                <Icon.Group size='big'>
-                    <Icon size='small' name='spinner' color='pink' />
-                </Icon.Group>
-            </Header>
-            
-            <Menu>
-                <Menu.Item as={Link} to='/'> Home </Menu.Item>
-                <Menu.Item as={Link} to='/workouts'> Workouts </Menu.Item>
-                <Menu.Item as={Link} to='/workout-form'> Add Workout </Menu.Item>
-            </Menu>
-            
-            <Route exact path="/" component={Homepage}/>
-            <Route exact path="/workouts" component={Workout}/>
-            <Route exact path="/workout-form" component={WorkoutForm}/>
+    return (
+        <Router>
+            <div>
+                <Header icon textAlign='center'>
+                    <Icon.Group size='big'>
+                        <Icon size='small' name='spinner' color='pink' />
+                    </Icon.Group>
+                </Header>
+                
+                <Menu>
+                    <Menu.Item as={Link} to='/'> Home </Menu.Item>
+                    <Menu.Item as={Link} to='/workouts'> Workouts </Menu.Item>
+                    <Menu.Item as={Link} to='/workout-form'> Add Workout </Menu.Item>
+                </Menu>
+                
+                <Route exact path="/" component={Homepage}/>
+                <Route exact path="/workouts" component={Workout}/>
+                <Route exact path="/workout-form" component={WorkoutForm}/>
 
-        </div>
-    </ Router >
-)}
+            </div>
+        </ Router >
+    )}
 
 export default Navbar;
+
+// stateless component 
 

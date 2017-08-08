@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import Workout from './Workout';
-import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider} from 'semantic-ui-react'
+import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider, Label} from 'semantic-ui-react'
+import store from '../index'
 
 const WorkoutList = props => (
     <div>
+          <Label size='big' color='pink'> 
+                HIIT Workouts
+          </Label>
+          <p></p>
+
         {props.workouts.map((workout, index) => 
         <Container>
             <Segment color="pink">
@@ -41,3 +47,5 @@ const WorkoutList = props => (
     
 
 export default WorkoutList;
+
+// stateless component 
